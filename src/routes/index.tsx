@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 import logo from "@/assets/logo.asset.json";
-import heroImg from "@/assets/hero-justice.jpg";
+import heroImg from "@/assets/hero-justice.jpg.asset.json";
 import abogadoImg from "@/assets/abogado.jpg";
 
 export const Route = createFileRoute("/")({
