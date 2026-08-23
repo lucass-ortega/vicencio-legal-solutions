@@ -249,44 +249,49 @@ function Hero() {
 
 function Servicios() {
   return (
-    <section id="servicios" className="bg-background py-28 lg:py-36">
+    <section id="servicios" className="bg-beige/40 py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        <div className="max-w-2xl">
+        <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow text-accent">Áreas de práctica</p>
           <h2 className="mt-6 text-4xl leading-tight text-foreground lg:text-5xl">
-            Servicios jurídicos con criterio y precisión
+            Servicios jurídicos modernos y precisos
           </h2>
-          <p className="mt-6 text-base leading-relaxed font-light text-muted-foreground">
-            Un abordaje integral de los conflictos más frecuentes, con foco en resultados concretos
+          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed font-light text-muted-foreground">
+            Un enfoque integral en los conflictos más frecuentes, con foco en resultados concretos
             y en la tranquilidad de quien consulta.
           </p>
         </div>
-        <div className="mt-16 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {servicios.map((s) => (
             <article
               key={s.title}
-              className="group flex flex-col bg-card p-10 transition-colors hover:bg-secondary"
+              className="group flex flex-col rounded-[1.75rem] bg-card p-9 shadow-[0_1px_2px_oklch(0.26_0.05_252/0.04),0_24px_50px_-30px_oklch(0.26_0.05_252/0.28)] transition-transform duration-300 hover:-translate-y-1"
             >
-              <s.icon size={26} strokeWidth={1.2} className="text-accent" />
-              <h3 className="mt-8 text-2xl text-foreground">{s.title}</h3>
-              <p className="mt-4 text-sm leading-relaxed font-light text-muted-foreground">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10">
+                <s.icon size={26} strokeWidth={1.2} className="text-accent" />
+              </div>
+              <h3 className="mt-7 text-2xl text-foreground">{s.title}</h3>
+              <p className="mt-4 flex-1 text-sm leading-relaxed font-light text-muted-foreground">
                 {s.text}
               </p>
               <a
                 href={WHATSAPP}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-8 inline-flex items-center gap-2 text-xs tracking-[0.2em] text-foreground/70 uppercase transition-colors group-hover:text-accent"
+                className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-accent px-7 py-3 text-xs font-semibold tracking-[0.18em] text-accent-foreground uppercase shadow-[0_10px_24px_-10px_oklch(0.68_0.14_55/0.6)] transition-opacity hover:opacity-90"
               >
-                Consultar <ArrowUpRight size={13} />
+                Consultar
               </a>
             </article>
           ))}
-          <div className="hidden bg-navy p-10 lg:flex lg:flex-col lg:justify-end">
-            <p className="font-serif text-3xl leading-snug text-primary-foreground">
-              “Cada expediente tiene una persona detrás.”
+          <div className="flex flex-col justify-center rounded-[1.75rem] bg-navy p-9 text-center">
+            <span className="font-serif text-6xl leading-none text-accent" aria-hidden>
+              &ldquo;
+            </span>
+            <p className="mt-2 font-serif text-2xl leading-snug text-primary-foreground">
+              Cada expediente tiene una persona detrás.
             </p>
-            <p className="mt-5 text-xs tracking-[0.2em] text-accent uppercase">
+            <p className="mt-6 text-xs tracking-[0.2em] text-accent uppercase">
               Dr. Martín Vicencio
             </p>
           </div>
