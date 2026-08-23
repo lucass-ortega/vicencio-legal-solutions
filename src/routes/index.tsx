@@ -20,7 +20,7 @@ import {
 
 import logo from "@/assets/logo.asset.json";
 import heroImg from "@/assets/hero-justice.jpg.asset.json";
-import abogadoImg from "@/assets/abogado.jpg";
+import abogadoImg from "@/assets/abogado.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
