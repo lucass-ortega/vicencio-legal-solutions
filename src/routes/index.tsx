@@ -303,7 +303,7 @@ function SobreMi() {
         <div className="relative order-2 lg:order-1">
           <div className="absolute -inset-3 border border-navy/15" aria-hidden />
           <img
-            src={abogadoImg}
+            src={abogadoImg.url}
             alt="Dr. Martín Vicencio, abogado"
             loading="lazy"
             width={1008}
