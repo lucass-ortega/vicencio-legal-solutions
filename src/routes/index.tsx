@@ -118,7 +118,7 @@ function Logo({ tone = "light" }: { tone?: "light" | "dark" }) {
           tone === "light" ? "text-primary-foreground/60" : "text-muted-foreground"
         }`}
       >
-        Estudio Jurídico Martin Vicencio
+        Estudio Vicencio & Asociados
       </span>
     </a>
   );
