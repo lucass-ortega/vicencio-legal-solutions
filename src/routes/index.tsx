@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 import logo from "@/assets/logo.asset.json";
-import heroImg from "@/assets/hero-justice.jpg";
+import heroImg from "@/assets/hero-justice.jpg.asset.json";
 import abogadoImg from "@/assets/abogado.jpg";
 
 export const Route = createFileRoute("/")({
@@ -235,10 +235,10 @@ function Hero() {
         <div className="relative">
           <div className="absolute -inset-3 border border-accent/25" aria-hidden />
           <img
-            src={heroImg}
-            alt="Balanza de la justicia sobre escritorio de un estudio jurídico"
-            width={1200}
-            height={1504}
+            src={heroImg.url}
+            alt="Tribunales de Justicia"
+            width={736}
+            height={491}
             className="relative h-[420px] w-full object-cover sm:h-[560px] lg:h-[640px]"
           />
         </div>
