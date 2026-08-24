@@ -265,20 +265,20 @@ function Servicios() {
           {servicios.map((s) => (
             <article
               key={s.title}
-              className="group flex flex-col rounded-[1.75rem] bg-card p-9 shadow-[0_1px_2px_oklch(0.26_0.05_252/0.04),0_24px_50px_-30px_oklch(0.26_0.05_252/0.28)] transition-transform duration-300 hover:-translate-y-1"
+              className="group flex flex-col items-center rounded-[1.75rem] bg-card p-9 text-center shadow-[0_1px_2px_oklch(0.26_0.05_252/0.04),0_24px_50px_-30px_oklch(0.26_0.05_252/0.28)] transition-transform duration-300 hover:-translate-y-1"
             >
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10">
                 <s.icon size={26} strokeWidth={1.2} className="text-accent" />
               </div>
-              <h3 className="mt-7 text-2xl text-foreground">{s.title}</h3>
-              <p className="mt-4 flex-1 text-sm leading-relaxed font-light text-muted-foreground">
+              <h3 className="mt-7 text-2xl font-medium text-foreground">{s.title}</h3>
+              <p className="mt-4 flex-1 text-base leading-relaxed text-foreground/75">
                 {s.text}
               </p>
               <a
                 href={WHATSAPP}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-accent px-7 py-3 text-xs font-semibold tracking-[0.18em] text-accent-foreground uppercase shadow-[0_10px_24px_-10px_oklch(0.68_0.14_55/0.6)] transition-opacity hover:opacity-90"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3 text-xs font-semibold tracking-[0.18em] text-accent-foreground uppercase shadow-[0_10px_24px_-10px_oklch(0.68_0.14_55/0.6)] transition-opacity hover:opacity-90"
               >
                 Consultar
               </a>
