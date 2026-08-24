@@ -195,8 +195,6 @@ function Hero() {
           <div className="hairline mt-6 h-px w-24" />
           <h1 className="mt-8 text-[2.6rem] leading-[1.05] text-primary-foreground sm:text-6xl lg:text-[4.2rem]">
             Asesoramiento jurídico personalizado en derecho civil, laboral, familia y accidentes.
-            Cada caso recibe una estrategia propia, explicada sin tecnicismos y sostenida con
-            dedicación de principio a fin.
           </h1>
           <p className="mt-8 max-w-xl text-base leading-relaxed font-light text-primary-foreground/65">
             ACCIDENTES DE TRABAJO - DIVORCIOS - SUCESIONES - CONTRATOS
