@@ -18,7 +18,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 
-import logo from "@/assets/logo.asset.json";
+import logo from "@/assets/logo-vicencio.png";
 import heroImg from "@/assets/hero-justice.jpg.asset.json";
 import abogadoImg from "@/assets/abogado.jpg.asset.json";
 
