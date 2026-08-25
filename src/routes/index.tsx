@@ -204,7 +204,7 @@ function Hero() {
 
         <h1 className="mt-10 max-w-4xl font-serif text-[3rem] leading-[1.02] text-primary-foreground sm:text-7xl lg:text-[5.2rem]">
           Tu tranquilidad legal, nuestro{" "}
-          <em className="text-accent not-italic italic">compromiso.</em>
+          <em className="italic text-accent">compromiso.</em>
         </h1>
 
         <div className="mt-12 h-px w-12 bg-accent/70" aria-hidden />
