@@ -18,7 +18,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 
-import logo from "@/assets/logo.asset.json";
+import logo from "@/assets/logo-vicencio.png";
 import heroImg from "@/assets/hero-justice.jpg.asset.json";
 import abogadoImg from "@/assets/abogado.jpg.asset.json";
 
@@ -106,11 +106,9 @@ function Logo({ tone = "light" }: { tone?: "light" | "dark" }) {
   return (
     <a href="#inicio" className="flex items-center gap-3">
       <img
-        src={logo.url}
+        src={logo}
         alt="Estudio Vicencio"
-        width={132}
-        height={72}
-        className="h-11 w-auto rounded-sm object-contain"
+        className="h-12 w-auto object-contain"
       />
       <span className="sr-only">Estudio Vicencio</span>
       <span
