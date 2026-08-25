@@ -15,7 +15,6 @@ import {
   Phone,
   Menu,
   X,
-  ArrowUpRight,
   ArrowRight,
   PenLine,
 } from "lucide-react";
