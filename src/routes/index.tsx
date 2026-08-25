@@ -15,11 +15,11 @@ import {
   Phone,
   Menu,
   X,
-  ArrowUpRight,
+  ArrowRight,
+  PenLine,
 } from "lucide-react";
 
 import logo from "@/assets/logo-vicencio.png";
-import heroImg from "@/assets/hero-justice.jpg.asset.json";
 import abogadoImg from "@/assets/abogado.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -183,65 +183,99 @@ function Navbar() {
   );
 }
 
+const practicas = [
+  { icon: Briefcase, label: "Accidentes de trabajo" },
+  { icon: Users, label: "Divorcios" },
+  { icon: FileText, label: "Sucesiones" },
+  { icon: PenLine, label: "Contratos" },
+];
+
 function Hero() {
   return (
     <section id="inicio" className="relative overflow-hidden bg-navy-deep">
       <Navbar />
-      <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 pt-40 pb-24 lg:grid-cols-[1.05fr_0.95fr] lg:px-12 lg:pt-48 lg:pb-32">
-        <div>
-          <p className="eyebrow text-accent">Estudio jurídico · José C. Paz</p>
-          <div className="hairline mt-6 h-px w-24" />
-          <h1 className="mt-8 text-[2.6rem] leading-[1.05] text-primary-foreground sm:text-6xl lg:text-[4.2rem]">
-            Asesoramiento jurídico personalizado en derecho civil, laboral, familia y accidentes.
-          </h1>
-          <p className="mt-8 max-w-xl text-base leading-relaxed font-light text-primary-foreground/65">
-            ACCIDENTES DE TRABAJO - DIVORCIOS - SUCESIONES - CONTRATOS
+      <div className="mx-auto max-w-6xl px-6 pt-40 pb-24 lg:px-12 lg:pt-48 lg:pb-28">
+        <div className="flex items-center gap-5">
+          <span className="h-px w-10 bg-accent/70" aria-hidden />
+          <p className="text-xs tracking-[0.35em] text-accent uppercase">
+            Estudio jurídico · Buenos Aires
           </p>
-          <div className="mt-12 flex flex-col gap-4 sm:flex-row">
-            <a
-              href={WHATSAPP}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-accent px-9 py-4 text-xs tracking-[0.2em] text-accent-foreground uppercase transition-opacity hover:opacity-90"
-            >
-              Consultar ahora <ArrowUpRight size={15} />
-            </a>
-            <a
-              href="#servicios"
-              className="inline-flex items-center justify-center border border-primary-foreground/25 px-9 py-4 text-xs tracking-[0.2em] text-primary-foreground/85 uppercase transition-colors hover:border-accent hover:text-accent"
-            >
-              Ver servicios
-            </a>
-          </div>
-          <div className="mt-14 flex flex-wrap gap-10 border-t border-primary-foreground/10 pt-8">
-            {[
-              ["+15", "Años de ejercicio"],
-              ["100%", "Atención directa"],
-              ["24 h", "Primera respuesta"],
-            ].map(([n, l]) => (
-              <div key={l}>
-                <p className="font-serif text-3xl text-accent">{n}</p>
-                <p className="mt-1 text-xs tracking-widest text-primary-foreground/50 uppercase">
-                  {l}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
-        <div className="relative">
-          <div className="absolute -inset-3 border border-accent/25" aria-hidden />
-          <img
-            src={heroImg.url}
-            alt="Tribunales de Justicia"
-            width={736}
-            height={491}
-            className="relative h-[420px] w-full object-cover sm:h-[560px] lg:h-[640px]"
-          />
+
+        <h1 className="mt-10 max-w-4xl font-serif text-[3rem] leading-[1.02] text-primary-foreground sm:text-7xl lg:text-[5.2rem]">
+          Tu tranquilidad legal, nuestro{" "}
+          <em className="italic text-accent">compromiso.</em>
+        </h1>
+
+        <div className="mt-12 h-px w-12 bg-accent/70" aria-hidden />
+
+        <p className="mt-8 max-w-lg text-base leading-relaxed font-light text-primary-foreground/70">
+          Brindamos asesoramiento jurídico personalizado en derecho civil, laboral, familia y
+          patrimonial. Estrategia, claridad y comunicación directa.
+        </p>
+
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a
+            href={WHATSAPP}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-3 bg-accent px-8 py-4 text-xs tracking-[0.2em] text-accent-foreground uppercase transition-opacity hover:opacity-90"
+          >
+            Consultar mi caso <ArrowRight size={16} />
+          </a>
+          <a
+            href="#servicios"
+            className="inline-flex items-center justify-center gap-3 border border-accent/60 px-8 py-4 text-xs tracking-[0.2em] text-accent uppercase transition-colors hover:bg-accent hover:text-accent-foreground"
+          >
+            Ver áreas de práctica <ArrowRight size={16} />
+          </a>
+        </div>
+
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {practicas.map((p) => (
+            <a
+              key={p.label}
+              href="#servicios"
+              className="group border border-primary-foreground/15 p-6 transition-colors hover:border-accent/60"
+            >
+              <p.icon size={22} strokeWidth={1.2} className="text-accent" />
+              <div className="mt-8 flex items-center justify-between gap-4">
+                <span className="text-xs tracking-[0.16em] text-primary-foreground/85 uppercase">
+                  {p.label}
+                </span>
+                <ArrowRight
+                  size={16}
+                  className="shrink-0 text-accent transition-transform group-hover:translate-x-1"
+                />
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-16 grid border-t border-primary-foreground/10 pt-10 sm:grid-cols-3">
+          {[
+            ["+15", "Años de experiencia"],
+            ["100%", "Atención personalizada"],
+            ["+1k", "Casos acompañados"],
+          ].map(([n, l], idx) => (
+            <div
+              key={l}
+              className={`px-4 py-4 text-center ${
+                idx > 0 ? "sm:border-l sm:border-primary-foreground/10" : ""
+              }`}
+            >
+              <p className="font-serif text-4xl text-accent">{n}</p>
+              <p className="mt-2 text-xs tracking-[0.2em] text-primary-foreground/55 uppercase">
+                {l}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
 
 function Servicios() {
   return (
