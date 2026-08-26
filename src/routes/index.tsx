@@ -331,6 +331,144 @@ function Servicios() {
   );
 }
 
+function GoogleG({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden>
+      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" />
+      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" />
+      <path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" />
+      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1A11 11 0 0 0 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z" />
+    </svg>
+  );
+}
+
+const reviews = [
+  {
+    initial: "M",
+    name: "María González",
+    time: "Hace 2 semanas",
+    color: "#45413D",
+    text: "Una atención excelente. El Dr. Vicencio me acompañó en todo el proceso de mi divorcio con mucha humanidad y claridad. Siempre supe qué paso seguía y me sentí respaldada en cada momento.",
+  },
+  {
+    initial: "C",
+    name: "Carlos Fernández",
+    time: "Hace 1 mes",
+    color: "#1A3A31",
+    text: "Me asesoró tras un accidente de trabajo y consiguió lo que me correspondía. Profesional, directo y siempre disponible para responder mis dudas. Lo recomiendo sin dudarlo.",
+  },
+  {
+    initial: "A",
+    name: "Andrea López",
+    time: "Hace 3 semanas",
+    color: "#534686",
+    text: "Tramitamos una sucesión familiar que parecía interminable y la resolvió con una eficiencia admirable. Trato personal y honesto, algo que hoy se agradece mucho.",
+  },
+  {
+    initial: "R",
+    name: "Roberto Díaz",
+    time: "Hace 1 mes",
+    color: "#3A5693",
+    text: "Revisó un contrato que iba a firmar y me evitó un problema grande. Su asesoramiento preventivo vale oro. Comunicación directa y respuestas rápidas en todo momento.",
+  },
+];
+
+function Opiniones() {
+  return (
+    <section id="opiniones" className="bg-[#F9F9F9] py-28 lg:py-36">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="eyebrow text-accent">Opiniones de clientes</p>
+          <h2 className="mt-6 font-serif text-4xl leading-tight text-navy-deep lg:text-5xl">
+            La confianza de quienes ya nos eligieron
+          </h2>
+          <div className="mt-7 flex items-center justify-center gap-4">
+            <span className="h-px w-12 bg-accent/50" aria-hidden />
+            <Scale size={20} strokeWidth={1.2} className="text-accent" />
+            <span className="h-px w-12 bg-accent/50" aria-hidden />
+          </div>
+          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed font-light text-muted-foreground">
+            Cada caso representa una persona y una historia. Estas son algunas de las
+            experiencias compartidas por quienes confiaron en el estudio.
+          </p>
+        </div>
+
+        <div className="mt-10 flex flex-col items-center gap-3">
+          <div className="flex items-center gap-4">
+            <GoogleG className="h-7 w-7" />
+            <span className="font-serif text-4xl text-navy-deep">5,0</span>
+            <div className="flex gap-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <svg key={i} viewBox="0 0 20 20" className="h-5 w-5 fill-accent" aria-hidden>
+                  <path d="M10 1.5l2.6 5.27 5.82.85-4.21 4.1.99 5.79L10 14.77l-5.2 2.73.99-5.79-4.21-4.1 5.82-.85L10 1.5z" />
+                </svg>
+              ))}
+            </div>
+          </div>
+          <p className="text-sm font-light text-muted-foreground">
+            Basado en 23 reseñas de Google
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {reviews.map((r) => (
+            <article
+              key={r.name}
+              className="flex flex-col rounded-lg border border-border bg-card p-7"
+            >
+              <div className="flex items-start justify-between">
+                <div className="flex items-center gap-3">
+                  <span
+                    className="flex h-11 w-11 items-center justify-center rounded-full font-sans text-base font-semibold text-white"
+                    style={{ backgroundColor: r.color }}
+                  >
+                    {r.initial}
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-navy-deep">{r.name}</p>
+                    <p className="text-xs font-light text-muted-foreground">{r.time}</p>
+                  </div>
+                </div>
+                <GoogleG className="h-5 w-5 shrink-0" />
+              </div>
+              <div className="mt-4 flex gap-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg key={i} viewBox="0 0 20 20" className="h-4 w-4 fill-accent" aria-hidden>
+                    <path d="M10 1.5l2.6 5.27 5.82.85-4.21 4.1.99 5.79L10 14.77l-5.2 2.73.99-5.79-4.21-4.1 5.82-.85L10 1.5z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="mt-4 text-sm leading-relaxed font-light text-foreground/75">
+                {r.text}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-14 flex flex-col items-center justify-between gap-8 rounded-lg bg-navy-deep px-8 py-10 text-center sm:flex-row sm:text-left lg:px-12">
+          <div className="flex items-center gap-5">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-accent/50">
+              <Scale size={22} strokeWidth={1.2} className="text-accent" />
+            </span>
+            <p className="max-w-2xl text-sm leading-relaxed font-light text-primary-foreground/80">
+              Nuestro compromiso es que cada cliente se sienta escuchado, informado y
+              acompañado durante todo el proceso. La confianza es la base de nuestro trabajo.
+            </p>
+          </div>
+          <a
+            href="https://www.google.com/search?q=Estudio+Vicencio+Jos%C3%A9+C.+Paz+rese%C3%B1as"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex shrink-0 items-center gap-2 border border-primary-foreground/40 px-6 py-3 text-xs tracking-[0.18em] text-primary-foreground uppercase transition-colors hover:bg-primary-foreground hover:text-navy-deep"
+          >
+            Ver más reseñas en Google <ArrowUpRight size={14} />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function SobreMi() {
   return (
     <section id="sobre-mi" className="bg-beige py-28 lg:py-36">
