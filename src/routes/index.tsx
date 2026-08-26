@@ -16,6 +16,7 @@ import {
   Menu,
   X,
   ArrowRight,
+  ArrowUpRight,
   PenLine,
 } from "lucide-react";
 
@@ -713,6 +714,7 @@ function Index() {
     <main className="scroll-smooth">
       <Hero />
       <Servicios />
+      <Opiniones />
       <SobreMi />
       <Beneficios />
       <CTA />
