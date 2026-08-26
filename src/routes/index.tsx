@@ -220,13 +220,13 @@ function Hero() {
             href={WHATSAPP}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center gap-3 bg-accent px-8 py-4 text-xs tracking-[0.2em] text-accent-foreground uppercase transition-opacity hover:opacity-90"
+            className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-accent px-8 py-4 text-xs font-semibold tracking-[0.18em] text-white uppercase shadow-[0_3px_0_0_rgb(167_90_28)] transition-transform hover:-translate-y-0.5"
           >
             Consultar mi caso <ArrowRight size={16} />
           </a>
           <a
             href="#servicios"
-            className="inline-flex items-center justify-center gap-3 border border-accent/60 px-8 py-4 text-xs tracking-[0.2em] text-accent uppercase transition-colors hover:bg-accent hover:text-accent-foreground"
+            className="inline-flex items-center justify-center gap-3 rounded-[10px] border-2 border-accent px-8 py-4 text-xs font-semibold tracking-[0.18em] text-accent uppercase shadow-[0_3px_0_0_rgb(167_90_28)] transition-colors hover:bg-accent hover:text-white"
           >
             Ver áreas de práctica <ArrowRight size={16} />
           </a>
@@ -237,18 +237,16 @@ function Hero() {
             <a
               key={p.label}
               href="#servicios"
-              className="group border border-primary-foreground/15 p-6 transition-colors hover:border-accent/60"
+              className="group relative flex flex-col items-center justify-center rounded-[14px] border border-accent p-6 text-center shadow-[0_0_18px_-2px_rgba(227,130,48,0.45)] transition-all hover:shadow-[0_0_24px_-1px_rgba(227,130,48,0.7)]"
             >
-              <p.icon size={22} strokeWidth={1.2} className="text-accent" />
-              <div className="mt-8 flex items-center justify-between gap-4">
-                <span className="text-xs tracking-[0.16em] text-primary-foreground/85 uppercase">
-                  {p.label}
-                </span>
-                <ArrowRight
-                  size={16}
-                  className="shrink-0 text-accent transition-transform group-hover:translate-x-1"
-                />
-              </div>
+              <p.icon size={26} strokeWidth={1.4} className="text-accent" />
+              <span className="mt-6 text-xs font-semibold tracking-[0.16em] text-accent uppercase">
+                {p.label}
+              </span>
+              <ArrowRight
+                size={16}
+                className="absolute bottom-4 right-4 shrink-0 text-accent transition-transform group-hover:translate-x-1"
+              />
             </a>
           ))}
         </div>
