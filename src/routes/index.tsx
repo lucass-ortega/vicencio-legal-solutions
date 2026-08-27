@@ -185,10 +185,10 @@ function Navbar() {
 }
 
 const practicas = [
-  { icon: Briefcase, label: "Accidentes de trabajo" },
-  { icon: Users, label: "Divorcios" },
-  { icon: FileText, label: "Sucesiones" },
-  { icon: PenLine, label: "Contratos" },
+  { icon: Briefcase, label: "Accidentes de trabajo", sub: "ART" },
+  { icon: Users, label: "Divorcios", sub: "Cuota alimentaria" },
+  { icon: FileText, label: "Sucesiones", sub: null },
+  { icon: PenLine, label: "Contratos", sub: null },
 ];
 
 function Hero() {
