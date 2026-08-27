@@ -252,7 +252,7 @@ function Hero() {
                 {p.label}
               </span>
               {p.sub && (
-                <span className="mt-1 text-[0.65rem] font-medium tracking-[0.18em] text-accent/80 uppercase">
+                <span className="mt-2 text-xs font-semibold tracking-[0.16em] text-accent uppercase">
                   {p.sub}
                 </span>
               )}
