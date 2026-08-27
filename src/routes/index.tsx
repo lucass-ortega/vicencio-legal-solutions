@@ -660,7 +660,7 @@ function Contacto() {
             <div className="absolute -inset-3 border border-border" aria-hidden />
             <iframe
               title="Ubicación del Estudio Vicencio en José C. Paz"
-              src="https://www.google.com/maps?q=Zuvir%C3%ADa%20y%20Ruta%20197%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires&output=embed"
+              src="https://www.google.com/maps?q=ESTUDIO%20JURIDICO%20DR%20VICENCIO%2C%20Zuvir%C3%ADa%20y%20Ruta%20197%2C%20Jos%C3%A9%20C.%20Paz%2C%20Buenos%20Aires&z=17&output=embed"
               loading="lazy"
               className="relative h-[420px] w-full grayscale-[0.35] lg:h-full lg:min-h-[520px]"
             />
