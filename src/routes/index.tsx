@@ -251,6 +251,11 @@ function Hero() {
               <span className="mt-6 text-xs font-semibold tracking-[0.16em] text-accent uppercase">
                 {p.label}
               </span>
+              {p.sub && (
+                <span className="mt-1 text-[0.65rem] font-medium tracking-[0.18em] text-accent/80 uppercase">
+                  {p.sub}
+                </span>
+              )}
               <ArrowRight
                 size={16}
                 className="absolute bottom-4 right-4 shrink-0 text-accent transition-transform group-hover:translate-x-1"
