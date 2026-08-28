@@ -506,13 +506,14 @@ function SobreMi() {
           </p>
           <div className="mt-8 space-y-6 text-base leading-relaxed font-light text-foreground/80">
             <p>
-              Desde hace más de quince años acompaño a personas y familias del oeste bonaerense en
-              los momentos en que la ley se vuelve necesaria. Mi trabajo comienza escuchando: sin un
-              diagnóstico honesto no hay estrategia posible.
+              Desde hace más de quince años acompaño junto a mi equipo de abogados a personas y
+              familias de la localidad de José C. Paz y zonas aledañas en los momentos en que la ley
+              se vuelve necesaria. Nuestro trabajo comienza escuchando: sin un diagnóstico honesto no
+              hay estrategia posible.
             </p>
             <p>
               Ejerzo en derecho civil, laboral, familia y accidentes de tránsito, con presencia
-              activa en cada instancia del proceso. Prefiero un estudio de escala humana, donde el
+              activa en cada instancia del proceso. Preferimos un estudio de escala humana, donde el
               cliente conoce a su abogado y entiende cada paso que se da en su nombre.
             </p>
             <p>
