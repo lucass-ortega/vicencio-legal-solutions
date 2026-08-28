@@ -623,11 +623,7 @@ function Contacto() {
                   </p>
                   <p className="mt-2 font-light text-foreground">
                     <a href={WHATSAPP} target="_blank" rel="noreferrer" className="hover:text-accent">
-                      15-6381-7775 (WhatsApp)
-                    </a>
-                    <br />
-                    <a href="tel:02320424413" className="hover:text-accent">
-                      02320-424413
+                      15-63817775 (WhatsApp)
                     </a>
                   </p>
                 </div>
@@ -651,7 +647,8 @@ function Contacto() {
                     Horarios
                   </p>
                   <p className="mt-2 font-light text-foreground">
-                    Lunes a viernes, 9:00 a 18:00 h — con turno previo
+                    Lunes a Viernes. 10:00 a 19;00 h - sin turno previo, con
+                    previo aviso vía WhatsApp
                   </p>
                 </div>
               </div>
