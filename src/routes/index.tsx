@@ -647,7 +647,8 @@ function Contacto() {
                     Horarios
                   </p>
                   <p className="mt-2 font-light text-foreground">
-                    Lunes a viernes, 9:00 a 18:00 h — con turno previo
+                    Lunes a Viernes. 10:00 a 19;00 h - sin turno previo, con
+                    previo aviso vía WhatsApp
                   </p>
                 </div>
               </div>
