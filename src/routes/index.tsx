@@ -623,11 +623,7 @@ function Contacto() {
                   </p>
                   <p className="mt-2 font-light text-foreground">
                     <a href={WHATSAPP} target="_blank" rel="noreferrer" className="hover:text-accent">
-                      15-6381-7775 (WhatsApp)
-                    </a>
-                    <br />
-                    <a href="tel:02320424413" className="hover:text-accent">
-                      02320-424413
+                      15-63817775 (WhatsApp)
                     </a>
                   </p>
                 </div>
