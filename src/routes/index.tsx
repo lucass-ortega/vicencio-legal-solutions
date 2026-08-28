@@ -523,7 +523,7 @@ function SobreMi() {
           </div>
           <div className="mt-10 grid gap-6 border-t border-navy/10 pt-8 sm:grid-cols-2">
             {[
-              ["Formación", "Abogacía · Ejercicio en la Provincia de Buenos Aires"],
+              ["Formación", "Abogacía - Ejercicio en la Provincia de Buenos Aires y Capital Federal"],
               ["Enfoque", "Trato personal, estrategia y seguimiento del expediente"],
             ].map(([t, d]) => (
               <div key={t}>
