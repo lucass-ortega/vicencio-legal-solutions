@@ -127,8 +127,10 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <header className="absolute inset-x-0 top-0 z-50">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-12">
-        <Logo />
+      <div className="relative mx-auto flex max-w-7xl items-center px-6 py-6 lg:justify-between lg:px-12">
+        <div className="flex w-full justify-center lg:w-auto lg:justify-start">
+          <Logo />
+        </div>
         <nav className="hidden items-center gap-10 lg:flex">
           {nav.map((i) => (
             <a
@@ -151,7 +153,7 @@ function Navbar() {
         <button
           onClick={() => setOpen(!open)}
           aria-label="Menú"
-          className="text-primary-foreground lg:hidden"
+          className="absolute right-6 top-1/2 -translate-y-1/2 text-primary-foreground lg:static lg:right-auto lg:translate-y-0 lg:hidden"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
