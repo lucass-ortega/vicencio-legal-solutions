@@ -22,6 +22,7 @@ import {
 
 import logo from "@/assets/logo-vicencio.png";
 import abogadoImg from "@/assets/abogado.jpg.asset.json";
+import heroImg from "@/assets/hero-justice.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -193,98 +194,127 @@ const practicas = [
   { icon: PenLine, label: "Contratos", sub: null },
 ];
 
+function HeroExtras({ className = "" }: { className?: string }) {
+  return (
+    <div className={className}>
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {practicas.map((p) => (
+          <a
+            key={p.label}
+            href="#servicios"
+            className="group relative flex flex-col items-center justify-center rounded-[14px] border border-accent p-6 text-center shadow-[0_0_18px_-2px_rgba(227,130,48,0.45)] transition-all hover:shadow-[0_0_24px_-1px_rgba(227,130,48,0.7)]"
+          >
+            <p.icon size={26} strokeWidth={1.4} className="text-accent" />
+            <span className="mt-6 text-xs font-semibold tracking-[0.16em] text-accent uppercase">
+              {p.label}
+            </span>
+            {p.sub && (
+              <span className="mt-2 text-xs font-semibold tracking-[0.16em] text-accent uppercase">
+                {p.sub}
+              </span>
+            )}
+            <ArrowRight
+              size={16}
+              className="absolute bottom-4 right-4 shrink-0 text-accent transition-transform group-hover:translate-x-1"
+            />
+          </a>
+        ))}
+      </div>
+
+      <div className="mt-16 grid border-t border-primary-foreground/10 pt-10 sm:grid-cols-3">
+        {[
+          ["+15", "Años de experiencia"],
+          ["100%", "Atención personalizada"],
+          ["+1k", "Casos acompañados"],
+        ].map(([n, l], idx) => (
+          <div
+            key={l}
+            className={`px-4 py-4 text-center ${
+              idx > 0 ? "sm:border-l sm:border-primary-foreground/10" : ""
+            }`}
+          >
+            <p className="font-serif text-4xl text-accent">{n}</p>
+            <p className="mt-2 text-xs tracking-[0.2em] text-primary-foreground/55 uppercase">
+              {l}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <section id="inicio" className="relative overflow-hidden bg-navy-deep">
       <Navbar />
-      <div className="mx-auto max-w-6xl px-6 pt-40 pb-24 lg:px-12 lg:pt-48 lg:pb-28">
-        <div className="flex items-center gap-5">
-          <span className="h-px w-10 bg-accent/70" aria-hidden />
-          <p className="text-xs tracking-[0.35em] text-accent uppercase">
-            Estudio jurídico · Buenos Aires
-          </p>
-        </div>
-
-        <h1 className="mt-10 max-w-4xl font-serif text-[3rem] leading-[1.02] text-primary-foreground sm:text-7xl lg:text-[5.2rem]">
-          Tu tranquilidad legal, nuestro{" "}
-          <em className="italic text-accent">compromiso.</em>
-        </h1>
-
-        <div className="mt-12 h-px w-12 bg-accent/70" aria-hidden />
-
-        <p className="mt-8 max-w-lg text-base leading-relaxed font-light text-primary-foreground/70">
-          Brindamos asesoramiento jurídico personalizado en derecho civil, laboral, familia y
-          patrimonial. Estrategia, claridad y comunicación directa.
-        </p>
-
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a
-            href={WHATSAPP}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-accent px-8 py-4 text-xs font-semibold tracking-[0.18em] text-white uppercase shadow-[0_3px_0_0_rgb(167_90_28)] transition-transform hover:-translate-y-0.5"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="h-[1em] w-[1em]"
-              aria-hidden
-            >
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.89-11.893a11.82 11.82 0 0 0-3.48-8.413Z" />
-            </svg>
-            Hacer consulta <ArrowRight size={16} />
-          </a>
-          <a
-            href="#servicios"
-            className="inline-flex items-center justify-center gap-3 rounded-[10px] border-2 border-accent px-8 py-4 text-xs font-semibold tracking-[0.18em] text-accent uppercase shadow-[0_3px_0_0_rgb(167_90_28)] transition-colors hover:bg-accent hover:text-white"
-          >
-            Ver áreas de práctica <ArrowRight size={16} />
-          </a>
-        </div>
-
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {practicas.map((p) => (
-            <a
-              key={p.label}
-              href="#servicios"
-              className="group relative flex flex-col items-center justify-center rounded-[14px] border border-accent p-6 text-center shadow-[0_0_18px_-2px_rgba(227,130,48,0.45)] transition-all hover:shadow-[0_0_24px_-1px_rgba(227,130,48,0.7)]"
-            >
-              <p.icon size={26} strokeWidth={1.4} className="text-accent" />
-              <span className="mt-6 text-xs font-semibold tracking-[0.16em] text-accent uppercase">
-                {p.label}
-              </span>
-              {p.sub && (
-                <span className="mt-2 text-xs font-semibold tracking-[0.16em] text-accent uppercase">
-                  {p.sub}
-                </span>
-              )}
-              <ArrowRight
-                size={16}
-                className="absolute bottom-4 right-4 shrink-0 text-accent transition-transform group-hover:translate-x-1"
-              />
-            </a>
-          ))}
-        </div>
-
-        <div className="mt-16 grid border-t border-primary-foreground/10 pt-10 sm:grid-cols-3">
-          {[
-            ["+15", "Años de experiencia"],
-            ["100%", "Atención personalizada"],
-            ["+1k", "Casos acompañados"],
-          ].map(([n, l], idx) => (
-            <div
-              key={l}
-              className={`px-4 py-4 text-center ${
-                idx > 0 ? "sm:border-l sm:border-primary-foreground/10" : ""
-              }`}
-            >
-              <p className="font-serif text-4xl text-accent">{n}</p>
-              <p className="mt-2 text-xs tracking-[0.2em] text-primary-foreground/55 uppercase">
-                {l}
+      <div className="mx-auto max-w-6xl px-6 pt-40 pb-24 lg:px-12 lg:pt-36 lg:pb-0">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <div>
+            <div className="flex items-center gap-5">
+              <span className="h-px w-10 bg-accent/70" aria-hidden />
+              <p className="text-xs tracking-[0.35em] text-accent uppercase">
+                Estudio jurídico · Buenos Aires
               </p>
             </div>
-          ))}
+
+            <h1 className="mt-10 max-w-4xl font-serif text-[3rem] leading-[1.02] text-primary-foreground sm:text-7xl lg:mt-8 lg:max-w-xl lg:text-[4.25rem] lg:leading-[1.05]">
+              Tu tranquilidad legal, nuestro{" "}
+              <em className="italic text-accent">compromiso.</em>
+            </h1>
+
+            <div className="mt-12 h-px w-12 bg-accent/70 lg:mt-8" aria-hidden />
+
+            <p className="mt-8 max-w-lg text-base leading-relaxed font-light text-primary-foreground/70 lg:mt-6">
+              Brindamos asesoramiento jurídico personalizado en derecho civil, laboral, familia y
+              patrimonial. Estrategia, claridad y comunicación directa.
+            </p>
+
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row lg:mt-8">
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-accent px-8 py-4 text-xs font-semibold tracking-[0.18em] text-white uppercase shadow-[0_3px_0_0_rgb(167_90_28)] transition-transform hover:-translate-y-0.5"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-[1em] w-[1em]"
+                  aria-hidden
+                >
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.89-11.893a11.82 11.82 0 0 0-3.48-8.413Z" />
+                </svg>
+                Hacer consulta <ArrowRight size={16} />
+              </a>
+              <a
+                href="#servicios"
+                className="inline-flex items-center justify-center gap-3 rounded-[10px] border-2 border-accent px-8 py-4 text-xs font-semibold tracking-[0.18em] text-accent uppercase shadow-[0_3px_0_0_rgb(167_90_28)] transition-colors hover:bg-accent hover:text-white"
+              >
+                Ver áreas de práctica <ArrowRight size={16} />
+              </a>
+            </div>
+          </div>
+
+          <div className="hidden lg:block">
+            <div className="relative h-[540px] overflow-hidden rounded-2xl border border-primary-foreground/10 shadow-soft">
+              <img
+                src={heroImg.url}
+                alt="Edificio de justicia"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-navy-deep/10 to-transparent" />
+            </div>
+          </div>
         </div>
+
+        <div className="lg:hidden">
+          <HeroExtras className="mt-14" />
+        </div>
+      </div>
+
+      <div className="hidden lg:block">
+        <HeroExtras className="mx-auto max-w-6xl px-12 pt-16 pb-20" />
       </div>
     </section>
   );
