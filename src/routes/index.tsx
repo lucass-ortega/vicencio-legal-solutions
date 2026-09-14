@@ -604,6 +604,38 @@ function SobreMi() {
           </div>
         </div>
       </div>
+
+      <div className="mx-auto mt-24 max-w-7xl px-6 lg:mt-32 lg:px-12">
+        <div className="max-w-2xl">
+          <p className="eyebrow text-accent">Formación complementaria</p>
+          <h3 className="mt-6 text-3xl leading-tight text-foreground lg:text-4xl">
+            Títulos y certificaciones
+          </h3>
+          <p className="mt-5 text-base leading-relaxed font-light text-foreground/75">
+            Capacitación continua en derecho civil, laboral, de familia y filosofía jurídica a lo
+            largo de más de veinticinco años de ejercicio profesional.
+          </p>
+        </div>
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {titulos.map((t) => (
+            <figure key={t.caption} className="group">
+              <div className="relative overflow-hidden border border-navy/15 bg-white p-3 shadow-[var(--shadow-soft)] transition-shadow duration-300 group-hover:shadow-lg">
+                <div className="overflow-hidden">
+                  <img
+                    src={t.img}
+                    alt={t.alt}
+                    loading="lazy"
+                    className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+              </div>
+              <figcaption className="mt-4 text-center text-xs leading-relaxed font-light text-foreground/70">
+                {t.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
