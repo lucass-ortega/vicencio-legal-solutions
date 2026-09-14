@@ -518,6 +518,39 @@ function Opiniones() {
   );
 }
 
+const titulos: { img: string; alt: string; caption: string }[] = [
+  {
+    img: tituloFilosofia.url,
+    alt: "Certificado XVIII Congreso Mundial de Filosofía Jurídica y Social, 1997",
+    caption: "XVIII Congreso Mundial de Filosofía Jurídica y Social · 1997",
+  },
+  {
+    img: tituloFamilia.url,
+    alt: "Certificado Tribunales de Familia, Círculo de Abogados, 2003",
+    caption: "Tribunales de Familia · Círculo de Abogados · 2003",
+  },
+  {
+    img: tituloTrabajo2005.url,
+    alt: "Certificado Foro de Institutos de Derecho del Trabajo, 2005",
+    caption: "Foro de Institutos de Derecho del Trabajo · 2005",
+  },
+  {
+    img: tituloTrabajo2012.url,
+    alt: "Certificado XIV Encuentro Foro de Derecho del Trabajo, 2012",
+    caption: "XIV Encuentro Foro de Derecho del Trabajo · 2012",
+  },
+  {
+    img: tituloLey15057.url,
+    alt: "Certificado Ley 15.057 y Modernización Laboral, Colegio de Abogados de San Martín, 2026",
+    caption: "Ley 15.057 y Modernización Laboral · 2026",
+  },
+  {
+    img: tituloLey15057.url,
+    alt: "Certificado Ley 15.057 y Modernización Laboral, Colegio de Abogados de San Martín, 2026",
+    caption: "Ley 15.057 y Modernización Laboral · 2026",
+  },
+];
+
 function SobreMi() {
   return (
     <section id="sobre-mi" className="bg-beige py-28 lg:py-36">
