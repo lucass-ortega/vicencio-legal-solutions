@@ -23,6 +23,11 @@ import {
 import logo from "@/assets/logo-vicencio.png";
 import abogadoImg from "@/assets/abogado.jpg.asset.json";
 import heroImg from "@/assets/hero-justice.jpg.asset.json";
+import tituloFilosofia from "@/assets/titulo-filosofia-1997.jpg.asset.json";
+import tituloFamilia from "@/assets/titulo-familia-2003.jpg.asset.json";
+import tituloTrabajo2005 from "@/assets/titulo-trabajo-2005.jpg.asset.json";
+import tituloTrabajo2012 from "@/assets/titulo-trabajo-2012.jpg.asset.json";
+import tituloLey15057 from "@/assets/titulo-ley15057-2026.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
