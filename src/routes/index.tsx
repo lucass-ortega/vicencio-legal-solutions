@@ -23,6 +23,11 @@ import {
 import logo from "@/assets/logo-vicencio.png";
 import abogadoImg from "@/assets/abogado.jpg.asset.json";
 import heroImg from "@/assets/hero-justice.jpg.asset.json";
+import tituloFilosofia from "@/assets/titulo-filosofia-1997.jpg.asset.json";
+import tituloFamilia from "@/assets/titulo-familia-2003.jpg.asset.json";
+import tituloTrabajo2005 from "@/assets/titulo-trabajo-2005.jpg.asset.json";
+import tituloTrabajo2012 from "@/assets/titulo-trabajo-2012.jpg.asset.json";
+import tituloLey15057 from "@/assets/titulo-ley15057-2026.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -513,6 +518,39 @@ function Opiniones() {
   );
 }
 
+const titulos: { img: string; alt: string; caption: string }[] = [
+  {
+    img: tituloFilosofia.url,
+    alt: "Certificado XVIII Congreso Mundial de Filosofía Jurídica y Social, 1997",
+    caption: "XVIII Congreso Mundial de Filosofía Jurídica y Social · 1997",
+  },
+  {
+    img: tituloFamilia.url,
+    alt: "Certificado Tribunales de Familia, Círculo de Abogados, 2003",
+    caption: "Tribunales de Familia · Círculo de Abogados · 2003",
+  },
+  {
+    img: tituloTrabajo2005.url,
+    alt: "Certificado Foro de Institutos de Derecho del Trabajo, 2005",
+    caption: "Foro de Institutos de Derecho del Trabajo · 2005",
+  },
+  {
+    img: tituloTrabajo2012.url,
+    alt: "Certificado XIV Encuentro Foro de Derecho del Trabajo, 2012",
+    caption: "XIV Encuentro Foro de Derecho del Trabajo · 2012",
+  },
+  {
+    img: tituloLey15057.url,
+    alt: "Certificado Ley 15.057 y Modernización Laboral, Colegio de Abogados de San Martín, 2026",
+    caption: "Ley 15.057 y Modernización Laboral · 2026",
+  },
+  {
+    img: tituloLey15057.url,
+    alt: "Certificado Ley 15.057 y Modernización Laboral, Colegio de Abogados de San Martín, 2026",
+    caption: "Ley 15.057 y Modernización Laboral · 2026",
+  },
+];
+
 function SobreMi() {
   return (
     <section id="sobre-mi" className="bg-beige py-28 lg:py-36">
@@ -564,6 +602,38 @@ function SobreMi() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-24 max-w-7xl px-6 lg:mt-32 lg:px-12">
+        <div className="max-w-2xl">
+          <p className="eyebrow text-accent">Formación complementaria</p>
+          <h3 className="mt-6 text-3xl leading-tight text-foreground lg:text-4xl">
+            Títulos y certificaciones
+          </h3>
+          <p className="mt-5 text-base leading-relaxed font-light text-foreground/75">
+            Capacitación continua en derecho civil, laboral, de familia y filosofía jurídica a lo
+            largo de más de veinticinco años de ejercicio profesional.
+          </p>
+        </div>
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {titulos.map((t) => (
+            <figure key={t.caption} className="group">
+              <div className="relative overflow-hidden border border-navy/15 bg-white p-3 shadow-[var(--shadow-soft)] transition-shadow duration-300 group-hover:shadow-lg">
+                <div className="overflow-hidden">
+                  <img
+                    src={t.img}
+                    alt={t.alt}
+                    loading="lazy"
+                    className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+              </div>
+              <figcaption className="mt-4 text-center text-xs leading-relaxed font-light text-foreground/70">
+                {t.caption}
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
     </section>
