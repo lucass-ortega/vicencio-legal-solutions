@@ -630,8 +630,8 @@ function SobreMi() {
           </p>
         </div>
         <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {titulos.map((t) => (
-            <figure key={t.caption} className="group">
+          {titulos.map((t, index) => (
+            <figure key={`${t.caption}-${index}`} className="group">
               <div className="relative overflow-hidden border border-navy/15 bg-white p-3 shadow-[var(--shadow-soft)] transition-shadow duration-300 group-hover:shadow-lg">
                 <div className="overflow-hidden">
                   <img
