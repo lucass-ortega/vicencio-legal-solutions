@@ -21,13 +21,13 @@ import {
 } from "lucide-react";
 
 import logo from "@/assets/logo-vicencio.png";
-import abogadoImg from "@/assets/abogado.jpg.asset.json";
-import heroImg from "@/assets/hero-justice.jpg.asset.json";
-import tituloFilosofia from "@/assets/titulo-filosofia-1997.jpg.asset.json";
-import tituloFamilia from "@/assets/titulo-familia-2003.jpg.asset.json";
-import tituloTrabajo2005 from "@/assets/titulo-trabajo-2005.jpg.asset.json";
-import tituloTrabajo2012 from "@/assets/titulo-trabajo-2012.jpg.asset.json";
-import tituloLey15057 from "@/assets/titulo-ley15057-2026.jpg.asset.json";
+const abogadoImg = { url: "/images/abogado.jpg" };
+const heroImg = { url: "/images/hero-justice.jpg" };
+const tituloFilosofia = { url: "/images/titulo-filosofia-1997.jpg" };
+const tituloFamilia = { url: "/images/titulo-familia-2003.jpg" };
+const tituloTrabajo2005 = { url: "/images/titulo-trabajo-2005.jpg" };
+const tituloTrabajo2012 = { url: "/images/titulo-trabajo-2012.jpg" };
+const tituloLey15057 = { url: "/images/titulo-ley15057-2026.jpg" };
 
 export const Route = createFileRoute("/")({
   head: () => ({
