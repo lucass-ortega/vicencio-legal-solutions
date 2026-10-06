@@ -152,6 +152,13 @@ function Navbar() {
             href={WHATSAPP}
             target="_blank"
             rel="noreferrer"
+            onClick={() => {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "conversion", {
+      send_to: "AW-16912464372/BNXdCPTr7ZIdEPTzvoA_",
+    });
+  }
+}}
             className="border border-accent/60 px-6 py-2.5 text-xs tracking-[0.2em] text-accent uppercase transition-colors hover:bg-accent hover:text-accent-foreground"
           >
             Consultar
