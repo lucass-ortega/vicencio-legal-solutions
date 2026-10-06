@@ -72,6 +72,50 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+// Etiqueta de Google Ads (AW-16912464372). Se carga según la región y el
+// consentimiento guardado; el aviso de cookies la habilita donde corresponde.
+const adsBootScript = `(function () {
+  var KEY = 'vicencio-cookie-consent';
+  var VERSION = 1;
+  var CONSENT_REGIONS = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'];
+  function loadAdsTag() {
+    if (window.__vicoAdsLoaded) return;
+    window.__vicoAdsLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-16912464372';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', 'AW-16912464372');
+  }
+  window.__vicoAds = { load: loadAdsTag, prompt: null };
+  var saved = null;
+  try { saved = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
+  if (saved && saved.v === VERSION && saved.decision) {
+    if (saved.decision === 'granted') loadAdsTag();
+    return;
+  }
+  var controller = new AbortController();
+  var timer = setTimeout(function () { controller.abort(); }, 2000);
+  function resolve(text) {
+    clearTimeout(timer);
+    var m = /(?:^|\\n)loc=([A-Za-z0-9]+)/.exec(text || '');
+    var loc = m ? m[1].toUpperCase() : 'XX';
+    if (loc === 'XX' || loc === 'T1' || CONSENT_REGIONS.indexOf(loc) !== -1) {
+      window.__vicoAds.prompt = { country: loc === 'T1' ? 'XX' : loc };
+    } else {
+      loadAdsTag();
+    }
+    window.dispatchEvent(new CustomEvent('vico:cookie-prompt'));
+  }
+  fetch('/cdn-cgi/trace', { signal: controller.signal })
+    .then(function (r) { return r.ok ? r.text() : Promise.reject(new Error(String(r.status))); })
+    .then(resolve)
+    .catch(function () { resolve(''); });
+})();`;
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -91,6 +135,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
     ],
+    scripts: [{ type: "text/javascript", dangerouslySetInnerHTML: adsBootScript }],
   }),
 
   shellComponent: RootShell,
@@ -120,6 +165,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <CookieBanner />
     </QueryClientProvider>
   );
 }
