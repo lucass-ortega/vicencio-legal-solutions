@@ -152,13 +152,6 @@ function Navbar() {
             href={WHATSAPP}
             target="_blank"
             rel="noreferrer"
-            onClick={() => {
-    if (typeof window.gtag === "function") {
-      window.gtag("event", "conversion", {
-      send_to: "AW-16912464372/BNXdCPTr7ZIdEPTzvoA_",
-    });
-  }
-}}
             className="border border-accent/60 px-6 py-2.5 text-xs tracking-[0.2em] text-accent uppercase transition-colors hover:bg-accent hover:text-accent-foreground"
           >
             Consultar
@@ -283,6 +276,13 @@ function Hero() {
           href={WHATSAPP}
           target="_blank"
           rel="noreferrer"
+          onClick={() => {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "conversion", {
+      send_to: "AW-16912464372/BNXdCPTr7ZIdEPTzvoA_",
+    });
+  }
+}}
           className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-accent px-8 py-4 text-xs font-semibold tracking-[0.18em] text-white uppercase shadow-[0_3px_0_0_rgb(167_90_28)] transition-transform hover:-translate-y-0.5"
         >
           <svg viewBox="0 0 24 24" fill="currentColor" className="h-[1em] w-[1em]" aria-hidden>
