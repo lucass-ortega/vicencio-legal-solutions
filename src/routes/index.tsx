@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { openCookieSettings } from "@/lib/cookie-consent";
 import { useState } from "react";
 import {
   Scale,
