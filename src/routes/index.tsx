@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { openCookieSettings } from "@/lib/cookie-consent";
 import { useState } from "react";
 import {
   Scale,
@@ -822,7 +823,21 @@ function Footer() {
         </div>
         <div className="mt-14 flex flex-col gap-3 border-t border-primary-foreground/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs font-light text-primary-foreground/40">
-            © {new Date().getFullYear()} Estudio Vicencio. Todos los derechos reservados.
+            © {new Date().getFullYear()} Estudio Vicencio. Todos los derechos reservados.{" "}
+            <button
+              type="button"
+              onClick={openCookieSettings}
+              className="underline underline-offset-4 transition-colors hover:text-primary-foreground/70"
+            >
+              Cookies
+            </button>
+            {" · "}
+            <a
+              href="/privacidad"
+              className="underline underline-offset-4 transition-colors hover:text-primary-foreground/70"
+            >
+              Política de privacidad
+            </a>
           </p>
           <p className="text-xs font-light text-primary-foreground/40">
             José C. Paz, Buenos Aires, Argentina
