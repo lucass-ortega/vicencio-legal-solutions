@@ -16,7 +16,7 @@ export type ConsentDecision = "granted" | "denied";
 export type ConsentRecord = {
   v: number;
   decision: ConsentDecision;
-  country?: string;
+  country?: string | undefined;
   at: string;
   notice: string;
   purposes: string[];

@@ -79,7 +79,7 @@ export function CookieBanner() {
                   : "Todavía no elegiste. Podés cambiar esta preferencia en cualquier momento."}
               </p>
               <ul className="mt-3 space-y-1 text-xs leading-relaxed font-light text-primary-foreground/55">
-                <li>· Finalidad: {PURPOSES[0].toLowerCase()}.</li>
+                <li>· Finalidad: {PURPOSES[0]?.toLowerCase()}.</li>
                 <li>· Destinatario: {RECIPIENTS[0]}.</li>
                 <li>
                   · Más detalles en la{" "}

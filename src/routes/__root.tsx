@@ -35,7 +35,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -136,7 +136,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
     ],
-    scripts: [{ type: "text/javascript", dangerouslySetInnerHTML: adsBootScript }],
+    scripts: [{ type: "text/javascript", dangerouslySetInnerHTML: { __html: adsBootScript } }],
   }),
 
   shellComponent: RootShell,
