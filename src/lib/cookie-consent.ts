@@ -25,6 +25,8 @@ export type ConsentRecord = {
 
 declare global {
   interface Window {
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
     __vicoAds?: {
       load: () => void;
       prompt?: { country?: string } | null;
