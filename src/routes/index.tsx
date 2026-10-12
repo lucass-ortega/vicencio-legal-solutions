@@ -291,10 +291,11 @@ function Hero() {
           Hacer consulta <ArrowRight size={16} />
         </a>
         <a
-          href="#servicios"
+          href="tel:+5491163817775"
           className="inline-flex items-center justify-center gap-3 rounded-[10px] border-2 border-accent px-8 py-4 text-xs font-semibold tracking-[0.18em] text-accent uppercase shadow-[0_3px_0_0_rgb(167_90_28)] transition-colors hover:bg-accent hover:text-white"
         >
-          Ver áreas de práctica <ArrowRight size={16} />
+          <Phone size={16} strokeWidth={1.6} aria-hidden />
+          Llamar a Martín
         </a>
       </div>
     </>
