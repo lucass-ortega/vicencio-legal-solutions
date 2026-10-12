@@ -290,13 +290,37 @@ function Hero() {
           </svg>
           Hacer consulta <ArrowRight size={16} />
         </a>
-        <a
-          href="tel:+5491163817775"
-          className="inline-flex items-center justify-center gap-3 rounded-[10px] border-2 border-accent px-8 py-4 text-xs font-semibold tracking-[0.18em] text-accent uppercase shadow-[0_3px_0_0_rgb(167_90_28)] transition-colors hover:bg-accent hover:text-white"
-        >
-          <Phone size={16} strokeWidth={1.6} aria-hidden />
-          Llamar a Martín
-        </a>
+        
+<a
+  href="tel:+5491163817775"
+  onClick={(event) => {
+    if (typeof window.gtag !== "function") return;
+
+    event.preventDefault();
+
+    let callStarted = false;
+
+    const startCall = () => {
+      if (callStarted) return;
+      callStarted = true;
+      window.location.href = "tel:+5491163817775";
+    };
+
+    window.gtag("event", "conversion", {
+      send_to: "AW-16912464372/KagFCJ-CxJodEPTzvoA_",
+      value: 1.0,
+      currency: "ARS",
+      event_callback: startCall,
+    });
+
+    window.setTimeout(startCall, 1000);
+  }}
+  className="inline-flex items-center justify-center gap-3 rounded-[10px] border-2 border-accent px-8 py-4 text-xs font-semibold tracking-[0.18em] text-accent uppercase shadow-[0_3px_0_0_rgb(167_90_28)] transition-colors hover:bg-accent hover:text-white"
+>
+  <Phone size={16} strokeWidth={1.6} aria-hidden />
+  Llamar a Martín
+</a>
+
       </div>
     </>
   );
